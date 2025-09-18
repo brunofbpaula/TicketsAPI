@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tickets.Domain.Interfaces;
 using Tickets.Infrastructure.Persistence;
+using Tickets.Infrastructure.Repositories;
 using Tickets.Infrastructure.Seeders;
 
 namespace Tickets.Infrastructure
@@ -13,6 +15,7 @@ namespace Tickets.Infrastructure
             var connectionString = configuration.GetConnectionString("TicketsDb");
             services.AddScoped<IUserSeeder, UserSeeder>();
             services.AddDbContext<TicketsDBContext>(options => options.UseSqlServer(connectionString));
+            services.AddScoped<ITicketRepository, TicketRepository>();
 
             return services;
         }
