@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tickets.Domain.Entities.Ticket;
+using Tickets.Domain.Enums;
 
 namespace Tickets.Domain.Interfaces
 {
-    internal interface ITicketRepository
+    public interface ITicketRepository
     {
-        IEnumerable<Ticket> GetAll();
-        Ticket Get(int id);
-        Ticket Save(Ticket ticket);
-        Ticket Update(Ticket ticket);
-        Ticket Delete(int id);
+        Task<IEnumerable<Ticket>> GetAllTickets();
+        Task<IEnumerable<Ticket>> GetUserTickets(Guid id);
+        Task<IEnumerable<Ticket>> GetUserTicketsByStatus(Guid id, TicketStatus ticketStatus);
+        Task<Ticket> GetTicketById(Guid id);
+        Task<Ticket> AddTicket(Ticket ticket);
+        void UpdateTicket(Ticket ticket);
+        Task<Ticket> DeleteTicket(Guid id);
     }
 }

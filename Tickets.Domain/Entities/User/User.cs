@@ -10,8 +10,16 @@ namespace Tickets.Domain.Entities.User
 {
     public class User : Entity
     {
+        public User() { }
+        public User(string name, string email, UserRole role) 
+        {
+            Name = name;
+            Email = email;
+            Role = role;
+        }
+
         public string Name { get; private set; }
         public string Email { get; private set; }
-        public UserRole role { get; private set; }
+        public UserRole Role { get; private set; }
     }
 }
