@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36511.14 d17.14
+VisualStudioVersion = 17.14.36511.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.API", "Tickets.API\Tickets.API.csproj", "{4D36003B-C8E5-431F-B3E9-13C2D5ABFCDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.Domain", "Tickets.Domain\Tickets.Domain.csproj", "{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.Infrastructure", "Tickets.Infrastructure\Tickets.Infrastructure.csproj", "{4C13E891-D28E-4CB6-8A6C-2653FC5CB39B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.Application", "Tickets.Application\Tickets.Application.csproj", "{C8E6AD11-770D-4A00-B681-A89AB88CD065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{4D36003B-C8E5-431F-B3E9-13C2D5ABFCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D36003B-C8E5-431F-B3E9-13C2D5ABFCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D36003B-C8E5-431F-B3E9-13C2D5ABFCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C13E891-D28E-4CB6-8A6C-2653FC5CB39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C13E891-D28E-4CB6-8A6C-2653FC5CB39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C13E891-D28E-4CB6-8A6C-2653FC5CB39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C13E891-D28E-4CB6-8A6C-2653FC5CB39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E6AD11-770D-4A00-B681-A89AB88CD065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E6AD11-770D-4A00-B681-A89AB88CD065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E6AD11-770D-4A00-B681-A89AB88CD065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E6AD11-770D-4A00-B681-A89AB88CD065}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
