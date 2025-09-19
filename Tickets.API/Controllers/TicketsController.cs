@@ -45,5 +45,17 @@ namespace Tickets.API.Controllers
             return NoContent();
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateTicket(Guid id, [FromBody] UpdateTicketCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest("Route ID and command ID do not match.");
+            }
+
+            var updatedTicket = await _mediator.Send(command);
+
+            return Ok(updatedTicket);
+        }
     }
 }
