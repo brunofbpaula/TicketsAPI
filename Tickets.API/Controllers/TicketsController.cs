@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Tickets.Application.Abstractions.Commands;
 using Tickets.Application.Abstractions.Queries;
-using Tickets.Application.Tickets.Commands;
 
 namespace Tickets.API.Controllers
 {
