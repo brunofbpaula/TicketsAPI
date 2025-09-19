@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Tickets.Application.Abstractions.Queries;
+using Tickets.Application.Tickets.Commands;
 
 namespace Tickets.API.Controllers
 {
@@ -7,11 +10,36 @@ namespace Tickets.API.Controllers
     [ApiController]
     public class TicketsController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get() {
+        private readonly IMediator _mediator;
 
-            return Ok(200);
+        public TicketsController(IMediator mediator)
+        {
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CreateTicket([FromBody] CreateTicketCommand command)
+        {
+            if (command is null)
+                return BadRequest("Invalid Command");
+
+            var ticket = await _mediator.Send(command);
+            return CreatedAtAction(nameof(GetTicketById), new { id = ticket.Id }, ticket);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetTicketById(Guid id)
+        {
+            var ticket = await _mediator.Send(new GetTicketByIdQuery(id));
+            if (ticket == null)
+                return NotFound();
+
+            return Ok(ticket);
+        }
+
+
+
 
     }
 }

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36511.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.API", "Tickets.API\Tickets.API.csproj", "{4D36003B-C8E5-431F-B3E9-13C2D5ABFCDD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE} = {F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.Domain", "Tickets.Domain\Tickets.Domain.csproj", "{F8C2E7F8-A95E-4FE3-A855-E7557A7BAEAE}"
 EndProject
