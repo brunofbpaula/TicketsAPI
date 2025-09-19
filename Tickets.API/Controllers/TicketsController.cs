@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tickets.Application.Abstractions.Commands;
 using Tickets.Application.Abstractions.Queries;
+using Tickets.Domain.Entities.Ticket;
 
 namespace Tickets.API.Controllers
 {
@@ -27,6 +28,14 @@ namespace Tickets.API.Controllers
             var ticket = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetTicketById), new { id = ticket.Id }, ticket);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllTickets(){
+
+            IEnumerable<Ticket> tickets = await _mediator.Send(new GetAllTicketsQuery());
+            return Ok(tickets);
+        }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTicketById(Guid id)
