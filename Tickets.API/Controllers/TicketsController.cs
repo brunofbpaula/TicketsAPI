@@ -38,8 +38,12 @@ namespace Tickets.API.Controllers
             return Ok(ticket);
         }
 
-
-
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTicket(Guid id)
+        {
+            await _mediator.Send(new DeleteTicketCommand(id));
+            return NoContent();
+        }
 
     }
 }
